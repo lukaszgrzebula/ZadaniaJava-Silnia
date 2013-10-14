@@ -4,7 +4,7 @@
  */
 package javahive.silnia;
 /**
- * uuuuwaga uwaga - test gita
+ * gggguuuuwaga uwaga - test gita
  * @author Marcin Grabowiecki
  */
 
