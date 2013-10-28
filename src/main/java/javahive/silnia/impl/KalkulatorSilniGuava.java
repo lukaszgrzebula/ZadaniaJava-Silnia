@@ -1,5 +1,9 @@
 package javahive.silnia.impl;
 
+import java.math.BigInteger;
+
+import com.google.common.math.BigIntegerMath;
+
 import javahive.silnia.KalkulatorSilni;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -8,22 +12,19 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  *
  * @author mgr
  */
-public class KalkulatorSilniGuava implements KalkulatorSilni{
+public class KalkulatorSilniGuava implements KalkulatorSilni {
 
-    public String licz(int arg) {
-        
-        /*
-         * 
-         * żeby użyć biblioteki Guava do liczenia silni wystarczy dodać
-         *     <dependency>
-         *       <groupId>com.google.guava</groupId>
-         *       <artifactId>guava</artifactId>
-         *       <version>14.0.1</version>
-         *       <type>jar</type>
-         *     </dependency>
-         * do pliku pom.xml
-         * 
-         */
-        throw new NotImplementedException();
-    }
+	public String licz(int arg) {
+
+		BigInteger wynik = BigIntegerMath.factorial(arg);
+		Integer jeden = 1;
+
+		if (arg < 0) {
+			throw new ArithmeticException();
+		} else if (arg == 0) {
+			return jeden.toString();
+		} else {
+			return wynik.toString();
+		}
+	}
 }

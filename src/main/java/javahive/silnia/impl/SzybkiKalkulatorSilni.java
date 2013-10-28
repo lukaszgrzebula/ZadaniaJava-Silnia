@@ -17,7 +17,12 @@ import javahive.silnia.KalkulatorSilni;
 public class SzybkiKalkulatorSilni implements KalkulatorSilni{
     //metoda licząca silnie w sposób rekurencyjny
     public long liczLong(long podstawa){
-        if(podstawa>0) {
+    	Integer wynik;
+    	if(podstawa==0){
+    		wynik=1;
+    		return wynik;
+    	}
+    	if(podstawa>0) {
             return podstawa*liczLong(podstawa-1);
         } else {
             return 1;
@@ -25,6 +30,9 @@ public class SzybkiKalkulatorSilni implements KalkulatorSilni{
     }
     
     public String licz(int arg) {
+    	if(arg<0){
+    		throw new ArithmeticException();
+    	}
         //wynik działania rekrurencyjnej metody rzutowany jest na String,
         //Bo string przechowa bez problemu duże liczby
         return ""+liczLong(arg);

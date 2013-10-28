@@ -129,9 +129,59 @@ public class SilniaTest {
     }
     
     @Test
-    public void t008WszystkieKalkulatorySilniPowinnyLiczycZero(){
-    	//TODO napisać test który sprawdzi czy wszystkie kalkulatory liczą 0!
-    	Assert.fail();
+    public void WszystkieKalkulatorySilniPowinnyLiczycZero(){
+    	KalkulatorSilni kalk=new SzybkiKalkulatorSilni();
+    	Integer liczyZero=0;
+    	String wynik=kalk.licz(0);
+    	if(wynik.contains("1")){
+    		liczyZero++;
+    	}
+    	else{
+    		liczyZero=liczyZero;
+    	}
+    	
+    	KalkulatorSilni kalk1=new OptymalnyKalkulatorSilni();
+    	String wynik2=kalk.licz(0);
+    	if(wynik.contains("1")){
+    		liczyZero++;
+    	}
+    	else{
+    		liczyZero=liczyZero;
+    	}
+    	
+    	KalkulatorSilni kalk3=new KalkulatorSilniGuava();
+    	String wynik3=kalk.licz(0);
+    	if(wynik.contains("1")){
+    		liczyZero++;
+    	}
+    	else{
+    		liczyZero=liczyZero;
+    	}
+    	
+    	KalkulatorSilni kalk4=new KalkulatorSilniBigDecimal();
+    	String wynik4=kalk.licz(0);
+    	if(wynik.contains("1")){
+    		liczyZero++;
+    	}
+    	else{
+    		liczyZero=liczyZero;
+    	}
+    	
+    	KalkulatorSilni kalk5=new KalkulatorSilniNieRekurencyjny();
+    	String wynik5=kalk.licz(0);
+    	if(wynik.contains("1")){
+    		liczyZero++;
+    	}
+    	else{
+    		liczyZero=liczyZero;
+    	}
+    	
+    	if(liczyZero==5){
+    		// ;)
+    	}
+    	else{
+    		Assert.fail();
+    	}
     }
     
 
